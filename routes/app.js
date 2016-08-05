@@ -54,7 +54,7 @@ module.exports = function(express){
     }else {
       res.json({
         "id": "1",
-        "title": "Splash mountain",
+        "title": "Splash Maze",
         "description": "Solve puzzles as you race against the tide",
         "artAssets": [
           { "title": "Splash Screen", "srcLink": "http://i.imgur.com/5e5Ihb6.jpg" },
