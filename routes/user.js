@@ -1,7 +1,7 @@
 module.exports = function(express){
   var router = express.Router();
 
-  //Route that shows all of the apps
+  //Route that shows all of the users
   router.get('/users', function(req,res){
     res.json([{
       "user": {
@@ -16,6 +16,7 @@ module.exports = function(express){
     }]);
   })
 
+  // Route that shows a specific user by id
   router.get('/users/:id', function(req,res){
     if(req.params.id == 2){
       res.json({

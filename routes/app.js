@@ -37,6 +37,7 @@ module.exports = function(express){
     }]);
   })
 
+  // Route that shows a specific app by id
   router.get('/apps/:id', function(req,res){
     if(req.params.id == 0){
       res.json({
