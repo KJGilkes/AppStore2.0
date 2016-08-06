@@ -1,22 +1,23 @@
 //Including the express package
-var express = require('express');
+const express = require('express');
 //Including the body-parser package
-var bodyparser = require('body-parser');
+const bodyparser = require('body-parser');
 //Instantiating express
-var app = express();
+const app = express();
 
 //Setting the port
-var port = 3000;
+const port = process.env.PORT || 3000;
 
-//The prefix to the app.js route
-app.use('/api/v1', require('../routes/app')(express))
-//The prefix to the user.js route
-app.use('/api/v1', require('../routes/user')(express))
+//Parsing the form data that comes in with the body parser package
+app.use(bodyparser.json());
+app.use(bodyparser.urlencoded({
+  extended:true,
+}));
+
+//The prefix to the index.js route
+app.use('/', require('./routes/index')(express))
 
 //Server function
-var server = app.listen(port, function(){
+exports.server = app.listen(port, function(){
   console.log('Server listening on port ' + port);
-})
-
-//Exporting server file contents
-module.exports = server;
+});
