@@ -51,5 +51,15 @@ module.exports = function(express){
     })
   });
 
+  //Route that gets the apps of a specific User
+  router.get('/users/:id/apps', function(req,res){
+    req.body.id = req.params.id;
+    User.one(req.body, (err) => {
+      res.status(500).json(err);
+    }, (data) => {
+      res.status(200).json(data.Apps);
+    })
+  });
+
   return router;
 }

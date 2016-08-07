@@ -20,6 +20,7 @@ app.use('/', require('./routes/index')(express))
 //Server function
 const server = app.listen(port, function(){
   console.log('Server listening on port ' + port);
-});
+})
 
+//Exporting server file contents
 module.exports = server;

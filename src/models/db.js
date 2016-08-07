@@ -27,13 +27,16 @@ const User = sequelize.define('User', {
 });
 
 const App = sequelize.define('App', {
+  userID: {
+    type: Sequelize.INTEGER,
+  },
   title: {
     type: Sequelize.STRING,
   },
   description: {
     type: Sequelize.STRING,
   },
-  
+
 });
 
 User.hasMany(App, {
