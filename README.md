@@ -31,14 +31,14 @@ DB_PORT=
 #### To create a user
 | Method | URL | Output/Response |
 |---|---|---|---|
-| POST | /api/v1/users | {"name": "Gilkes","age": 20,"hobby": "Skating"}|
+| POST | /api/v1/users | {"name": "Gilkes", "age": 20, "hobby": "Skating"}|
 
 This creates a user in the api
 
 #### To display all users info
 | Method | URL | Output/Response |
 |---|---|---|---|
-| GET | /api/v1/users | {"id": "2","name": "Gilkes","age": 20,"hobby": "Skating"}, {"id": "3","name": "Khalil","age": 30,"hobby": "Coding"}|
+| GET | /api/v1/users | {"id": "2", "name": "Gilkes", "age": 20, "hobby": "Skating"}, {"id": "3", "name": "Khalil", "age": 30, "hobby": "Coding"}|
 
 
 This displays all of the users in the api
@@ -46,14 +46,14 @@ This displays all of the users in the api
 #### To display a specific users info
 | Method | URL | Output/Response |
 |---|---|---|---|
-| GET | /api/v1/users/2 | {"id": "2","name": "Gilkes","age": 20,"hobby": "Skating"}|
+| GET | /api/v1/users/2 | {"id": "2", "name": "Gilkes", "age": 20, "hobby": "Skating"}|
 
 This displays a user with an id of 2 in the api
 
 #### To update a specific users info
 | Method | URL | Output/Response |
 |---|---|---|---|
-| Post | /api/v1/users/2 | {"name": "Gileks","age": 22,"hobby": "Rollerskating"}|
+| Post | /api/v1/users/2 | {"name": "Gileks", "age": 22, "hobby": "Rollerskating"}|
 
 This updates a user with an id of 2 in the api
 
