@@ -1,4 +1,4 @@
-# App Store Static API
+# App Store Dynamic API
 
 ### Installation
 To install api's dependencies run the command:
@@ -12,80 +12,98 @@ To start api's server run the command:
  npm start
 ```
 
-# Routes
+# Database configuration
+This api uses MySql
 
-#### Display all users info
-| Method | URL | Output/Response |
-|---|---|---|---|
-| GET | /api/v1/users | [{"user": {"id": "2","name": "Gilkes"}}]|
+To interact with the database your going to need a .env file filled with environmental variables as they pretain to your local machines database.
+```
+DB_NAME=
+DB_USER=
+DB_PASS=
+DB_HOST=
+DB_SCHEMA=
+DB_PORT=
 
-This displays an array of all the users in our api
-
-#### Display a specific users info
-| Method | URL | Output/Response |
-|---|---|---|---|
-| GET | /api/v1/users/2 | {"id": "2","name": "Gilkes"}|
-
-This displays a user with an id of 2 in our api
-
-#### Display all apps info
-```json
-Method: GET
-URL:/api/v1/apps
-Response:
-[{
-  "id": "0",
-  "title": "Shooterific",
-  "description": "Shoot em up action filled thriller",
-  "artAssets": [
-    { "title": "Splash Screen", "srcLink": "http://i.imgur.com/5e5Ihb6.jpg" },
-    { "title": "Cut Scene", "srcLink": "http://i.imgur.com/QQ3O6PO.jpg" }
-  ],
-  "releaseDate": "2016-06-15T22:29:20.000Z",
-  "createdAt": "2016-05-15T22:29:20.000Z",
-  "updatedAt": "2016-05-15T22:29:20.000Z",
-  "user": {
-    "id": "2",
-    "name": "Gilkes"
-  }
-},
-{
-  "id": "1",
-  "title": "Splash Maze",
-  "description": "Solve puzzles as you race against the tide",
-  "artAssets": [
-    { "title": "Splash Screen", "srcLink": "http://i.imgur.com/5e5Ihb6.jpg" },
-    { "title": "Cut Scene", "srcLink": "http://i.imgur.com/QQ3O6PO.jpg" }
-  ],
-  "releaseDate": "2016-06-15T22:29:20.000Z",
-  "createdAt": "2016-05-15T22:29:20.000Z",
-  "updatedAt": "2016-05-15T22:29:20.000Z",
-  "user": {
-    "id": "3",
-    "name": "Khalil"
-  }
-}]
 ```
 
-#### Display a specific apps info
-```json
-Method: GET
-URL:/api/v1/apps/0
-Response:
-{
-  "id": "0",
-  "title": "Shooterific",
-  "description": "Shoot em up action filled thriller",
-  "artAssets": [
-    { "title": "Splash Screen", "srcLink": "http://i.imgur.com/5e5Ihb6.jpg" },
-    { "title": "Cut Scene", "srcLink": "http://i.imgur.com/QQ3O6PO.jpg" }
-  ],
-  "releaseDate": "2016-06-15T22:29:20.000Z",
-  "createdAt": "2016-05-15T22:29:20.000Z",
-  "updatedAt": "2016-05-15T22:29:20.000Z",
-  "user": {
-    "id": "2",
-    "name": "Gilkes"
-  }
-}
-```
+# User Routes
+
+#### To create a user
+| Method | URL | Output/Response |
+|---|---|---|---|
+| POST | /api/v1/users | {"name": "Gilkes","age": 20,"hobby": "Skating"}|
+
+This creates a user in the api
+
+#### To display all users info
+| Method | URL | Output/Response |
+|---|---|---|---|
+| GET | /api/v1/users | {"id": "2","name": "Gilkes","age": 20,"hobby": "Skating"}, {"id": "3","name": "Khalil","age": 30,"hobby": "Coding"}|
+
+
+This displays all of the users in the api
+
+#### To display a specific users info
+| Method | URL | Output/Response |
+|---|---|---|---|
+| GET | /api/v1/users/2 | {"id": "2","name": "Gilkes","age": 20,"hobby": "Skating"}|
+
+This displays a user with an id of 2 in the api
+
+#### To update a specific users info
+| Method | URL | Output/Response |
+|---|---|---|---|
+| Post | /api/v1/users/2 | {"name": "Gileks","age": 22,"hobby": "Rollerskating"}|
+
+This updates a user with an id of 2 in the api
+
+#### To update a specific users apps
+| Method | URL | Output/Response |
+|---|---|---|---|
+| Post | /api/v1/users/2/apps | {"userID": "2", "title": "Splash Maze", "description": "Solve puzzles as you race against the tide."}|
+
+This updates a user with an id of 2 in the api
+
+#### To delete a specific users info
+| Method | URL | Output/Response |
+|---|---|---|---|
+| DELETE | /api/v1/users/2 | 1 |
+
+This deletes a user with an id of 2 in the api
+
+# App Routes
+
+#### To create an app
+| Method | URL | Output/Response |
+|---|---|---|---|
+| POST | /api/v1/apps | {"userID": "2", "title": "Splash Maze", "description": "Solve puzzles as you race against the tide."}|
+
+This creates an app in the api
+
+#### To display all apps info
+| Method | URL | Output/Response |
+|---|---|---|---|
+| GET | /api/v1/apps | {"userID": "2", "title": "Splash Maze", "description": "Solve puzzles as you race against the tide."}, {"userID": "3", "title": "Slime Factory", "description": "See if you can create the best slime in the Slime Factory."}|
+
+This creates a user in the api
+
+#### To display a specific apps info
+| Method | URL | Output/Response |
+|---|---|---|---|
+| GET | /api/v1/apps/1 | {"id": 1, "userID": "2", "title": "Splash Maze", "description": "Solve puzzles as you race against the tide."}|
+
+This creates a user in the api
+
+#### To update an app
+| Method | URL | Output/Response |
+|---|---|---|---|
+| POST | /api/v1/apps/1 | {"userID": "2", "title": "Splash Puzzles", "description": "Solve puzzles as you splash against the waves."}|
+
+This creates a user in the api
+
+#### To delete an app
+| Method | URL | Output/Response |
+|---|---|---|---|
+| DELETE | /api/v1/apps/1 | 1 |
+
+This creates a user in the api
