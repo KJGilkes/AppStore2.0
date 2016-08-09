@@ -1,8 +1,8 @@
 module.exports = (express) => {
   const router = express.Router();
 
-  router.get('/hello', (req,res) => {
-    console.log('Hello route hit');
+  router.get('/status', (req,res) => {
+    console.log('Status route hit');
     res.json({healthy:true});
   });
 
