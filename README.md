@@ -3,13 +3,13 @@
 ### Installation
 To install api's dependencies run the command:
 ```
- npm install
+npm install
 ```
 
 ### Start server
 To start api's server run the command:
 ```
- npm start
+npm start
 ```
 
 # Database configuration
@@ -24,6 +24,34 @@ DB_HOST=
 DB_SCHEMA=
 DB_PORT=
 
+```
+
+# Usage
+This application uses a debugging to to display information about its inner workings.
+
+To run the application in debug mode you will need to run:
+```
+DEBUG=true npm start
+```
+
+## Debugging
+To use this debug tool in the application you must put this line at the top of the file if it is not already there.
+```
+const utility = require(/Path to utility file);
+```
+After the tool has been included you can then console log any information using this line of code.
+```
+utility.debug('Message to be displayed.', Status Code);
+```
+
+## Sample
+```
+utility.debug('App route has been hit.', 200);
+```
+### Response
+```
+App route has been hit. 200
+===========================
 ```
 
 # User Routes
