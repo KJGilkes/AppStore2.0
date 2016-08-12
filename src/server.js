@@ -4,6 +4,10 @@ const express = require('express');
 const bodyparser = require('body-parser');
 //Instantiating express
 const app = express();
+//Including the colors package
+const color = require('colors')
+//Including the util.js file from my utility tool
+const utility = require('../utility_tool/util');
 
 //Setting the port
 const port = process.env.PORT || 3000;
@@ -19,7 +23,7 @@ app.use('/', require('./routes/index')(express))
 
 //Server function
 const server = app.listen(port, function(){
-  console.log('Server listening on port ' + port);
+  utility.debug('Server listening on port ' + port);
 })
 
 //Exporting server file contents
