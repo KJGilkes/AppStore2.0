@@ -23,7 +23,7 @@ app.use('/', require('./routes/index')(express))
 
 //Server function
 const server = app.listen(port, function(){
-  utility.log(color.blue('Server listening on port ') + color.blue(port));
+  utility.debug('Server listening on port ' + port);
 })
 
 //Exporting server file contents
