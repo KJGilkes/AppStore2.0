@@ -54,6 +54,42 @@ App route has been hit. 200
 ===========================
 ```
 
+## Airbnb Style Guide
+This application implements eslint to help correctly style and format its code.
+
+### Installation
+To install eslint you will need to run this command:
+```
+npm i --save-dev eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react
+```
+This command will install the eslint package and save it as a dev dependency.
+
+You will aslo need to install a linter or eslinter packge for whatever IDE you are using. In this case I am using atom so I would navigate to the settings an search for the atom linter or linter-eslint package and install it.
+
+### Configuration
+You will need to add a .eslintrc.json file on the root level of the project and specify these rules inside:
+```
+{
+	"env": {
+		"node": true
+	},
+	"extends": "airbnb",
+	"plugins": [
+        "react"
+    ],
+	"rules": {
+		"new-cap": 0,
+		"prefer-template": 0,
+		"global-require": 0
+	},
+	"globals": {
+		"describe": true,
+		"it": true
+	}
+}
+```
+This will tell eslint what to warn you about throughout the code.
+
 # User Routes
 
 #### To create a user
