@@ -7,6 +7,7 @@ exports.debug = (msg, status) => {
     const coloredmsg = color.green(msg);
     const errormsg = color.yellow(msg);
     if (status === undefined) {
+      /* eslint-disable */
       console.log(coloredmsg + seperator);
       fs.appendFile('logs/output.log', msg, () => {
       });
@@ -16,6 +17,7 @@ exports.debug = (msg, status) => {
       });
     } else {
       console.log(coloredmsg, status + seperator);
+      /* eslint-enable */
       fs.appendFile('logs/output.log', msg, () => {
       });
     }
