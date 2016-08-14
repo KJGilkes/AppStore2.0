@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
-
 require('dotenv').config();
+
 const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASS, {
   host: process.env.DB_HOST,
   dialect: process.env.DB_SCHEMA,
@@ -23,7 +23,7 @@ const User = sequelize.define('User', {
   },
   hobby: {
     type: Sequelize.STRING,
-  }
+  },
 });
 
 const App = sequelize.define('App', {
@@ -41,10 +41,10 @@ const App = sequelize.define('App', {
 
 User.hasMany(App, {
   foreignKey: 'userID',
-})
+});
 
 sequelize.sync();
 
-exports.sequelize =  sequelize;
+exports.sequelize = sequelize;
 exports.User = User;
 exports.App = App;
