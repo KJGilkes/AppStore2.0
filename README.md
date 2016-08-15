@@ -54,6 +54,7 @@ App route has been hit. 200
 ===========================
 ```
 
+
 ## Airbnb Style Guide
 This application implements eslint to help correctly style and format its code.
 
@@ -89,6 +90,27 @@ You will need to add a .eslintrc.json file on the root level of the project and 
 }
 ```
 This will tell eslint what to warn you about throughout the code.
+
+# Unit testing
+To run the unit tests inside of the test folder run the command:
+```
+mocha
+```
+This command looks through all files in the test folder and runs each specific test laid out inside.
+
+To run the unit tests inside of the test folder in debug mode run the command:
+```
+DEBUG=true mocha
+```
+This command does everything that the first command does but also logs out information about each test.
+
+## Istanbul
+This application makes use of istanbul to generate code coverage reports displaying how much of your application is covered by unit tests.
+
+To run istanbul use the command:
+```
+istanbul cover _mocha
+```
 
 # User Routes
 
