@@ -5,7 +5,7 @@ const server = require('../src/server');
 let mUser = {};
 let mApp = {};
 
-describe('User Routes', () => {
+describe('Routes', () => {
     /* eslint-disable */
     beforeEach(() => {
     /* eslint-enable */
