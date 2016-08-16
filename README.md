@@ -15,7 +15,7 @@ npm start
 # Database configuration
 This api uses MySql
 
-To interact with the database your going to need a .env file filled with environmental variables as they pretain to your local machines database.
+To interact with the database your going to need a .env file filled with environmental variables as they pertain to your local machines database.
 ```
 DB_NAME=
 DB_USER=
@@ -65,7 +65,7 @@ npm i --save-dev eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-
 ```
 This command will install the eslint package and save it as a dev dependency.
 
-You will aslo need to install a linter or eslinter packge for whatever IDE you are using. In this case I am using atom so I would navigate to the settings an search for the atom linter or linter-eslint package and install it.
+You will also need to install a linter or eslinter packge for whatever IDE you are using. In this case I am using atom so I would navigate to the settings an search for the atom linter or linter-eslint package and install it.
 
 ### Configuration
 You will need to add a .eslintrc.json file on the root level of the project and specify these rules inside:
