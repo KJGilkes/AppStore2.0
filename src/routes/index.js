@@ -4,7 +4,7 @@ module.exports = (express) => {
   const router = express.Router();
 
   router.get('/status', (req, res) => {
-    utility.log('Status route hit');
+    utility.debug('Status route hit');
     res.json({ healthy: true });
   });
 
