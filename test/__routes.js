@@ -1,5 +1,5 @@
 const request = require('supertest');
-const utility = require('../utility_tool/util');
+const utility = require('kj_utility_tool');
 const server = require('../src/server');
 
 let mUser = {};

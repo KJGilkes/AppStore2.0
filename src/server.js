@@ -4,9 +4,8 @@ const express = require('express');
 const bodyparser = require('body-parser');
 // Instantiating express
 const app = express();
-// Including the util.js file from my utility tool
-const utility = require('../utility_tool/util');
-
+// Including my utility tool
+const utility = require('kj_utility_tool');
 // Setting the port
 const port = process.env.PORT || 3000;
 

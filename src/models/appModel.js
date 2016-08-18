@@ -1,5 +1,5 @@
 const db = require('./db');
-const utility = require('../../utility_tool/util');
+const utility = require('kj_utility_tool');
 
 // Creates an App in the database
 exports.add = (payload, err, success) => {

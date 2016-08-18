@@ -1,5 +1,5 @@
 const User = require('../../models/userModel');
-const utility = require('../../../utility_tool/util');
+const utility = require('kj_utility_tool');
 
 module.exports = (express) => {
   const router = express.Router();

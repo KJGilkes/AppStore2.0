@@ -1,5 +1,5 @@
 const expect = require('chai').expect;
-const utility = require('../utility_tool/util');
+const utility = require('kj_utility_tool');
 const App = require('../src/models/appModel');
 
 let testApp = {};
