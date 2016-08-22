@@ -167,14 +167,15 @@ This creates a user in the api
 
 ## Workflow
 Typical workflow when adding a feature to this application is as follows
-1.Make a new feature branch on this repository
-2.Work on all things related to that feature in this new branch and commit all changes when done
-3.When done push up that feature branch to github
-4.Then merge that branch in with master
-5.Now create a release for those changes and tag it
-6.Then push that tag to the release branch
+
+1. Make a new feature branch on this repository
+2. Work on all things related to that feature in this new branch and commit all changes when done
+3. When done push up that feature branch to github
+4. Then merge that branch in with master
+5. Now create a release for those changes and tag it
+6. Then push that tag to the release branch
 
 ## Deployment
 This application is set up to deploy through heroku
-1.Follow the workflow section of this documentation
-2.After you get through that process when you push to the release branch it will automatically deploy
+1. Follow the workflow section of this documentation
+2. After you get through that process when you push to the release branch it will automatically deploy
