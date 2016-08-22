@@ -177,5 +177,6 @@ Typical workflow when adding a feature to this application is as follows
 
 ## Deployment
 This application is set up to deploy through heroku
+
 1. Follow the workflow section of this documentation
 2. After you get through that process when you push to the release branch it will automatically deploy
