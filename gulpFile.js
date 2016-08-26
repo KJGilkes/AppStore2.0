@@ -28,7 +28,7 @@ gulp.task('add', () => {
 
 gulp.task('commit', () => {
   return gulp.src('./package.json')
-  .pipe(git.commit('Incremented patch number'));
+  .pipe(git.commit('Incremented version number'));
 });
 
 gulp.task('push', function(){
