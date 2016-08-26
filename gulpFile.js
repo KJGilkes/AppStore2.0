@@ -1,30 +1,38 @@
 const gulp = require('gulp');
 const git = require('gulp-git');
+const utility = require('kj_utility_tool');
+const fs = require('fs');
+const argv = require('yargs').argv;
 
-gulp.task('default', ['server', 'minifi'], () => {
-  console.log('I gulp stuff');
+const filename = './package.json';
+const pack = require(filename);
+
+gulp.task('default', ['gulpit', 'add', 'commit', 'push'], () => {
 });
 
-gulp.task('server', () => {
-  console.log('Start the server.');
+gulp.task('gulpit', () => {
+  const vNum = utility.versionNum(pack.version, argv.tag);
+  pack.version = vNum;
+  const newFile = JSON.stringify(pack, null, 2);
+  fs.writeFile(filename, newFile, (err) => {
+    if (err) throw (err);
+  });
 });
 
-gulp.task('minifi', () => {
-  console.log('Minify the js file.');
-});
-
+/* eslint-disable*/
 // gulp-git demo
-// git.task('addAll', () => {
-//   return gulp.src('./*')
-//   .pipe(git.add());
-// });
-//
-// git.task('commit', () => {
-//   return gulp.src('./*')
-//   .pipe(git.commit('auto commit message...'));
-// });
-//
-// git.task('everything', ['addAll', 'commit'], () => {
-//   return gulp.src('./*')
-//   .pipe(git.commit('auto commit message...'));
-// });
+gulp.task('add', () => {
+  return gulp.src('./package.json')
+  .pipe(git.add());
+});
+
+gulp.task('commit', () => {
+  return gulp.src('./package.json')
+  .pipe(git.commit('Incremented patch number'));
+});
+
+gulp.task('push', function(){
+  git.push('origin', 'gulp', function (err) {
+    if (err) throw err;
+  });
+});
