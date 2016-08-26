@@ -26,6 +26,23 @@ DB_PORT=
 
 ```
 
+## Gulp
+This application implements gulp to automatically increment the version number and sync to github
+
+### Usage
+To increment the version number you will need to run one of these commands:
+```
+gulp --tag=major
+gulp --tag=minor
+gulp --tag=patch
+```
+
+Major increments the major portion of the version number
+
+Minor increments the minor portion of the version number
+
+Patch increments the patch portion of the version number
+
 ## Airbnb Style Guide
 This application implements eslint to help correctly style and format its code.
 
